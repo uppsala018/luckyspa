@@ -359,6 +359,14 @@ a {
   overflow: hidden;
   border: 1px solid rgba(31, 26, 23, 0.08);
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+  background: #d8c3a0;
+}
+
+.photo-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .photo-panel::before {
@@ -370,31 +378,14 @@ a {
     radial-gradient(circle at 30% 24%, rgba(255,255,255,0.2), transparent 22%);
 }
 
-.exterior-panel {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.18)),
-    linear-gradient(135deg, #b5b7ba 0%, #80858d 48%, #64696f 100%);
-}
-
-.room-panel {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.18)),
-    linear-gradient(135deg, #eadccf 0%, #c4b5a7 46%, #8d725f 100%);
-}
-
-.detail-panel {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.18)),
-    linear-gradient(135deg, #ead4c1 0%, #c78f6f 52%, #6f4c3b 100%);
-}
-
 .panel-copy {
   position: absolute;
   inset: auto 18px 18px 18px;
   padding: 18px;
   border-radius: 18px;
-  background: rgba(255, 250, 244, 0.78);
+  background: rgba(255, 250, 244, 0.84);
   backdrop-filter: blur(10px);
+  z-index: 1;
 }
 
 .panel-copy span {
