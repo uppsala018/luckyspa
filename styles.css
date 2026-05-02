@@ -415,6 +415,11 @@ a {
   border: 1px solid rgba(31, 26, 23, 0.08);
 }
 
+.video-stack {
+  display: grid;
+  gap: 14px;
+}
+
 .video-copy h3 {
   margin: 0 0 10px;
   font-size: 1.8rem;
@@ -434,6 +439,10 @@ a {
   object-fit: cover;
   background: #171311;
   box-shadow: var(--shadow);
+}
+
+.secondary-video {
+  aspect-ratio: 16 / 9;
 }
 
 @media (max-width: 960px) {
