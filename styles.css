@@ -343,14 +343,18 @@ a {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.price-grid > * {
+  min-width: 0;
+}
+
 .price-table dl {
   margin: 16px 0 0;
 }
 
 .price-table div {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   padding: 12px 0;
   border-top: 1px solid var(--line);
@@ -364,6 +368,13 @@ a {
 .price-table dd {
   color: var(--text);
   font-weight: 800;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.price-table h3,
+.price-table dt {
+  overflow-wrap: anywhere;
 }
 
 .price-actions {
@@ -371,6 +382,22 @@ a {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 24px;
+}
+
+.price-card-inline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.price-card-inline h3 {
+  margin: 0;
+}
+
+.price-card-inline strong {
+  color: var(--text);
+  white-space: nowrap;
 }
 
 .about-copy p {
@@ -562,6 +589,7 @@ a {
   display: block;
   font-size: 1.35rem;
   line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .treatment-copy {
@@ -573,6 +601,7 @@ a {
   margin: 26px 0 10px;
   font-family: 'Cormorant Garamond', serif;
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 .treatment-copy h2 {
@@ -586,6 +615,11 @@ a {
 .treatment-list {
   margin: 16px 0 0;
   padding-left: 20px;
+}
+
+.treatment-copy p,
+.treatment-list li {
+  overflow-wrap: anywhere;
 }
 
 .treatment-grid {
@@ -641,7 +675,8 @@ a {
   .site-header,
   .hero,
   .band {
-    width: min(100% - 32px, 1120px);
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
   }
 
   .site-header {
@@ -694,6 +729,12 @@ a {
     border-radius: 22px;
   }
 
+  .section-head h2,
+  .split h2 {
+    font-size: clamp(1.9rem, 10vw, 2.5rem);
+    overflow-wrap: anywhere;
+  }
+
   .hero h1 {
     font-size: clamp(2.3rem, 13vw, 3.35rem);
     max-width: 12ch;
@@ -725,6 +766,22 @@ a {
 
   .treatment-visual img {
     min-height: 320px;
+  }
+
+  .treatment-badge {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    padding: 18px;
+  }
+
+  .treatment-badge strong {
+    font-size: 1.12rem;
+  }
+
+  .treatment-copy p,
+  .treatment-list {
+    max-width: 30ch;
   }
 
   .hero-logo-wrap {
