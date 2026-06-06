@@ -23,6 +23,7 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: var(--text);
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(224, 193, 93, 0.24), transparent 26%),
     radial-gradient(circle at 85% 15%, rgba(180, 137, 34, 0.14), transparent 20%),
@@ -56,15 +57,15 @@ a {
 }
 
 .brand-mark {
-  width: 46px;
-  height: 46px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.42);
-  background: linear-gradient(135deg, #5b4018, #c5971f);
+  border: 1px solid rgba(191, 142, 41, 0.28);
+  background: #fffaf5;
   box-shadow: 0 12px 26px rgba(88, 63, 24, 0.22);
 }
 
@@ -73,7 +74,7 @@ a {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .brand strong,
@@ -142,9 +143,9 @@ a {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(3.4rem, 7vw, 6.4rem);
-  line-height: 0.93;
-  max-width: 10ch;
+  font-size: clamp(3rem, 6.2vw, 5.8rem);
+  line-height: 0.96;
+  max-width: 12ch;
 }
 
 .lead {
@@ -216,6 +217,7 @@ a {
 .hero-logo {
   border-radius: 50%;
   box-shadow: 0 22px 46px rgba(74, 52, 20, 0.18);
+  background: #fffaf5;
 }
 
 .visual-card {
@@ -309,10 +311,19 @@ a {
 
 .service-grid p,
 .split p,
+.about-copy p,
 .contact-grid span,
 .contact-grid strong {
   color: var(--muted);
   line-height: 1.7;
+}
+
+.about-copy p {
+  margin: 0 0 16px;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
 }
 
 .split {
@@ -472,17 +483,52 @@ a {
   .site-header,
   .hero,
   .band {
-    width: min(100% - 20px, 1120px);
+    width: min(100% - 32px, 1120px);
   }
 
   .site-header {
     gap: 14px;
+    justify-content: space-between;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 auto;
+  }
+
+  .brand strong,
+  .brand p {
+    white-space: nowrap;
+  }
+
+  .header-cta {
+    order: 3;
+    width: 100%;
+    flex: 0 0 100%;
+    margin-left: 0;
+    min-height: 44px;
+    padding: 0 16px;
   }
 
   .top-nav {
-    order: 3;
+    order: 2;
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 100%;
-    justify-content: space-between;
+    gap: 0;
+    text-align: center;
+    font-size: 0.98rem;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.12em;
+    overflow-wrap: anywhere;
   }
 
   .band {
@@ -491,7 +537,30 @@ a {
   }
 
   .hero h1 {
+    font-size: clamp(2.3rem, 13vw, 3.35rem);
     max-width: 12ch;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions a {
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+    border-radius: 24px;
+  }
+
+  .hero-logo-wrap {
+    width: min(82%, 340px);
   }
 
   .visual-stat {
