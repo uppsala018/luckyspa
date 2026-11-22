@@ -797,3 +797,92 @@ a {
     min-height: 220px;
   }
 }
+.vacation-banner {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #201713 0%, #34251c 50%, #201713 100%);
+  color: #fff7ef;
+  border-bottom: 1px solid rgba(224, 193, 93, 0.45);
+  box-shadow: 0 4px 16px rgba(32, 23, 19, 0.14);
+  position: relative;
+  z-index: 20;
+}
+
+.vacation-banner__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: vacation-marquee 32s linear infinite;
+}
+
+.vacation-banner:hover .vacation-banner__track {
+  animation-play-state: paused;
+}
+
+.vacation-banner__group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 24px;
+  padding: 11px 24px 11px 0;
+}
+
+.vacation-banner__item {
+  white-space: nowrap;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff7ef;
+}
+
+.vacation-banner__sep {
+  color: var(--accent-2);
+  font-size: 0.85rem;
+  line-height: 1;
+  user-select: none;
+}
+
+@keyframes vacation-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .vacation-banner__group {
+    gap: 20px;
+    padding: 10px 20px 10px 0;
+  }
+
+  .vacation-banner__item {
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vacation-banner__track {
+    width: 100%;
+    animation: none;
+    justify-content: center;
+  }
+
+  .vacation-banner__group {
+    padding: 11px 16px;
+    justify-content: center;
+  }
+
+  .vacation-banner__group[aria-hidden="true"],
+  .vacation-banner__item[aria-hidden="true"],
+  .vacation-banner__sep {
+    display: none;
+  }
+
+  .vacation-banner__item {
+    white-space: normal;
+    text-align: center;
+  }
+}
