@@ -2,9 +2,9 @@ const year = new Date().getFullYear();
 console.log(`Lycky Spa ready for ${year}`);
 
 const VACATION_START = new Date('2026-11-20T00:00:00+01:00');
-const VACATION_END = new Date('2026-11-28T00:00:00+01:00');
+const VACATION_END = new Date('2026-12-06T00:00:00+01:00');
 const VACATION_MESSAGE =
-  'Semesterstängt från den 20 november till den 27 november – varmt välkommen tillbaka den 28 november!';
+  'Semesterstängt från den 20 november till den 5 december – varmt välkommen tillbaka den 6 december!';
 
 function isVacationBannerActive(now = new Date()) {
   return now >= VACATION_START && now < VACATION_END;
